@@ -18,6 +18,18 @@
         return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
       }
   };
+
+  class CubeMaker extends CuboidMaker {
+    constructor(CMattributes) {
+        super(CMattributes);
+    }
+    cubeVolume(){
+        return this.length*this.width*this.height;
+    }
+    cubeSurfaceArea(){
+        return (this.length * this.width)*6;
+    }
+};
   /* == Step 2: Volume Method ==
     Create a method using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
     
@@ -46,7 +58,15 @@
     width: 5,
     height: 5
   }); 
+
+  const cube = new CubeMaker({
+      length: 5,
+      width: 5,
+      height: 5,
+  })
 // Test your volume and surfaceArea methods by uncommenting the logs below:
+console.log(cube.cubeVolume());
+console.log(cube.cubeSurfaceArea());
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
 
