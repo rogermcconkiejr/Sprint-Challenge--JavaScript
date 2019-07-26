@@ -16,18 +16,19 @@ function divideNums (num1, num2, callback){
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-function consume (num1, num2, add){
-  return add(num1+num2);
+function add(num1, num2){
+  return num1 + num2;
+}
+function multiply(num1, num2){
+  return num1 * num2;
+}
+function greeting(first, last){
+  return `Hello, ${first} ${last}, nice to meet you!`
 }
 
-function consume (num1, num2, multiply){
-  return multiply(num1*num2);
+function consume(firstNum, secondNum, operator){
+  return console.log(operator(firstNum, secondNum));
 }
-
-function consume (firstName, lastName){
-  return `Hello ${firstName} ${lastName}, nice to meet you!`
-}
-
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 consume(2,2,add); // 4
 consume(10,16,multiply); // 160
@@ -38,7 +39,9 @@ consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation: This has everything to do with closure and scope.  The reason why 'nestedFunction()' is able to access the variable internal is because that variabel is apart of its scope.  internal could be called in myFunction or nestedFunction but it would not be able to be called globally because that would be outside of its scope.  If a new variable were to be created inside of nestedFunction myFunction wouldn't be able to access it, neither would it be able to be accessed globally because it would fall ouside of its scope.
+
+
 
 
 const external = "I'm outside the function";
