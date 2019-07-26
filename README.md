@@ -30,13 +30,35 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+The biggest difference between .forEach and .map is the fact that .map will create a new array with the attributes whereas .forEach will only show one. 
+
 2. What is the difference between a function and a method?
 
-3. What is closure?
+A method is written inside of an object as one of its properties.  A function is written in the global scope.
+
+3. What is closure? 
+
+Closure has everything to do with scope. A closure is created everytime a function is created and is the lexical environment where the properties of that function exist.  They can only be called/used inside of that function unless the function is saved as a variable and called at a different time.
 
 4. Describe the four rules of the 'this' keyword.
 
+----- 1. Window/Global Binding ----- 
+In the global scope, the value of "this" will be the window/console object, in otherwords it will be the JavaScript program itself.
+
+----- 2. Implicit Binding ----- 
+If you are using a method on an object, you can identify values that you want to use within that method using the 'this' keyword.  This implies that you are using values from within that same object.  You then may call this using 
+--  obj.method(parameter here)  -- 
+there this will be referring to obj.
+
+----- 3. Explicit Binding -----
+This refers to when you change what an object points to.  You can do this by using .call or .apply.  You overwrite what the .this keyword points to when you use these, and the .this keyword will be pointed to whatever you've explicitly pointed to.  
+
+----- 4. New Binding ----- 
+This has everything to do with constructor functions.  You add 'this.' before all of the key elements in the constructor function.  Then they are paired with a parameter value.  This will then refer to whatever new object is created from that constructor function.
+
 5. Why do we need super() in an extended class?
+
+super() is like the special sauce when we extend a class.  It allows us to add all of the parent's properties/methods to the child object.
 
 ## Project Set up
 
